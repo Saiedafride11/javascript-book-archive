@@ -9,39 +9,10 @@ body{
     margin: 0;
     padding: 0;
 }
-h6{
-    font-size: 14px;
-    font-weight: 600;
-}
-p{
-    font-size: 14px;
-    color: grey;
-}
-
-button{
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    color: grey;
-    border: 1px solid grey;
-    background-color: transparent;
-    padding: .375rem .75rem;
-    border-radius: .25rem;
-    cursor: pointer;
-}
-button:hover{
-    color: #fff;
-    border: 1px solid transparent;
-    background-color: #000;
-    transition: 1s;
-}
 
 /* ******************************** */
             /* Responsive Css */
 /* ******************************** */
 @media only screen and (min-width: 320px) and (max-width:1200px) {
-    button{
-        margin-top: 6px;
-    }
+   
 }

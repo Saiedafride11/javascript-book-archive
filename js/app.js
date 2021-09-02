@@ -54,13 +54,12 @@ const displaySearchResult = (books) => {
     else{
         searchResult.innerHTML = ''
 
-         books.docs?.forEach(book => {
-            // console.log(book);
+         books.docs.slice(0, 20)?.forEach(book => {
             const div = document.createElement('div');
             div.style.marginBottom = '50px';
             div.classList.add('col');
             div.innerHTML = `
-                <div class="card h-100" style="box-shadow:0 10px 20px gray;">
+                <div class="card h-100" style="box-shadow:0 5px 20px gray;">
                     <img height="300px" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h4 class="card-title text-primary">${book.title}</h4>

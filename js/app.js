@@ -1,3 +1,4 @@
+/*---------------- Global Code ---------------------------*/
 const searchResult = document.getElementById('search-result');
 const showResults = document.getElementById('show-results');
 const noResults = document.getElementById('no-results');
@@ -16,6 +17,8 @@ const toggleSearchResult = displayStyle => {
 const searchBook = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
+
+    document.getElementById('search-text').innerText = searchText;
     
     searchResult.innerHTML = '';
    

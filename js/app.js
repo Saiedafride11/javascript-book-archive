@@ -34,6 +34,7 @@ const searchBook = () => {
     else{
         showResults.innerText = '';
         noResults.innerText = '';
+        search.style.display = 'none';
         // spinner
         toggleSpinner('block');
         toggleSearchResult('none');

@@ -17,12 +17,13 @@ const searchBook = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     
-    searchResult.innerHTML = ''
+    searchResult.innerHTML = '';
    
     if(searchText == ''){
         showResults.innerText = 'Plese write something to display';
         noResults.innerText = '';
-        searchResult.innerHTML = ''
+        searchResult.innerHTML = '';
+        document.getElementById('search').style.display = 'none';
     }
     else{
         showResults.innerText = '';
@@ -56,6 +57,7 @@ const displaySearchResult = (books) => {
          books.docs?.forEach(book => {
             // console.log(book);
             const div = document.createElement('div');
+            div.style.marginBottom = '50px';
             div.classList.add('col');
             div.innerHTML = `
                 <div class="card h-100" style="box-shadow:0 10px 20px gray;">
@@ -71,6 +73,6 @@ const displaySearchResult = (books) => {
             searchResult.appendChild(div);
         })
     }
-        toggleSpinner('none');
-        toggleSearchResult('flex');
+    toggleSpinner('none');
+    toggleSearchResult('flex');
 }

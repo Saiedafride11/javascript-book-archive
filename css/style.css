@@ -7,3 +7,10 @@ body{
 #search, #show-results, #no-results, #spinner{
     display: none;
 }
+
+/* -------------- Responsive ------------------ */
+@media only screen and (min-width: 320px) and (max-width:767px) {
+    .row>* {
+        padding-right: 0 !important;
+    }
+}

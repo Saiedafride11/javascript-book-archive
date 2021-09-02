@@ -62,8 +62,10 @@ const displaySearchResult = (books) => {
             div.style.marginBottom = '50px';
             div.classList.add('col');
             div.innerHTML = `
-                <div class="card h-100" style="box-shadow:0 5px 20px gray;">
-                    <img height="300px" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
+                <div class="card h-100" style="box-shadow: 0 5px 14px rgba(0, 0, 0, .25)">
+                    <div class="p-3">
+                        <img height="300px" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
+                    </div>
                     <div class="card-body">
                         <h4 class="card-title text-primary">${book.title}</h4>
                         <p class="card-text">Author: <strong>${book.author_name ? book.author_name : '----------'}</strong></p>

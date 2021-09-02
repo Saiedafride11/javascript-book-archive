@@ -4,6 +4,6 @@ body{
     margin: 0;
     padding: 0;
 }
-#search, #spinner{
+#search, #show-results, #no-results, #spinner{
     display: none;
 }

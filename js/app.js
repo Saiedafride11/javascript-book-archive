@@ -1,26 +1,28 @@
-/*----------------  ---------------------------*/
 const searchResult = document.getElementById('search-result');
 const showResults = document.getElementById('show-results');
 const noResults = document.getElementById('no-results');
 
-// spinner
+/*---------------- toggleSpinner ---------------------------*/
 const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
-// search-result
+
+/*---------------- toggleSearchResult ---------------------------*/
 const toggleSearchResult = displayStyle => {
     searchResult.style.display = displayStyle;
 }
 
-
+/*---------------- searchBook ---------------------------*/
 const searchBook = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     
     searchResult.innerHTML = '';
    
-    if(searchText == ''){
+    if(searchText === ''){
         showResults.innerText = 'Plese write something to display';
+        showResults.style.display = 'block';
+
         noResults.innerText = '';
         searchResult.innerHTML = '';
         document.getElementById('search').style.display = 'none';
@@ -28,7 +30,7 @@ const searchBook = () => {
     else{
         showResults.innerText = '';
         noResults.innerText = '';
-         // spinner
+        // spinner
         toggleSpinner('block');
         toggleSearchResult('none');
         searchField.value = '';
@@ -39,20 +41,21 @@ const searchBook = () => {
         .then(data => displaySearchResult(data))
 
         .catch(error => console.log(error))
-
     }
 }
 
-
+/*---------------- displaySearchResult ---------------------------*/
 const displaySearchResult = (books) => {
+    document.getElementById('total-show-result').innerText = books.docs.slice(0, 20).length;
     document.getElementById('total-search-result').innerText = books.numFound;
     document.getElementById('search').style.display = 'block';
 
-    if(books.numFound == 0){
-        noResults.innerText = 'Show no more Result found';
+    if(books.numFound === 0){
+        noResults.innerText = 'Sorry, Show no more Result found';
+        noResults.style.display = 'block';
     }
     else{
-        searchResult.innerHTML = ''
+        searchResult.innerHTML = '';
 
          books.docs.slice(0, 20)?.forEach(book => {
             const div = document.createElement('div');
@@ -72,6 +75,7 @@ const displaySearchResult = (books) => {
             searchResult.appendChild(div);
         })
     }
+    // spinner
     toggleSpinner('none');
     toggleSearchResult('flex');
 }
